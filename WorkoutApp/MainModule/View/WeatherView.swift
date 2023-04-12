@@ -9,31 +9,32 @@ import UIKit
 
 class WeatherView: UIView {
     
-    private let sunImageView: UIImageView = {
+    private let weatherIconImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(named: "sun")
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
     
-    private let weatherLabel: UILabel = {
+    private let weatherStatusLabel: UILabel = {
         let label = UILabel()
         label.text = "Солнечно"
-        label.textColor = #colorLiteral(red: 0.3176470588, green: 0.3176470588, blue: 0.3137254902, alpha: 1)
+        label.textColor = .specialGray
+        label.font = .robotoMedium18()
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
-    private let descriptionLabel: UILabel = {
+    private let weatherDescriptionLabel: UILabel = {
         let label = UILabel()
         label.text = "Хорошая погода, чтобы позаниматься на улице"
-        label.textColor = #colorLiteral(red: 0.7607843137, green: 0.7607843137, blue: 0.7607843137, alpha: 1)
+        label.textColor = .specialGray
+        label.font = .robotoMedium14()
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
         label.numberOfLines = 2
-        label.font = .systemFont(ofSize: 13)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -52,29 +53,30 @@ class WeatherView: UIView {
     private func setupViews() {
         backgroundColor = #colorLiteral(red: 0.9764705882, green: 0.9764705882, blue: 0.9764705882, alpha: 1)
         layer.cornerRadius = 10
+        addShadowOnView()
         translatesAutoresizingMaskIntoConstraints = false
         
-        addSubview(sunImageView)
-        addSubview(weatherLabel)
-        addSubview(descriptionLabel)
+        addSubview(weatherIconImageView)
+        addSubview(weatherStatusLabel)
+        addSubview(weatherDescriptionLabel)
     }
 }
 
 extension WeatherView {
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            sunImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            sunImageView.heightAnchor.constraint(equalToConstant: 62),
-            sunImageView.widthAnchor.constraint(equalToConstant: 62),
-            sunImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
+            weatherIconImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
+            weatherIconImageView.heightAnchor.constraint(equalToConstant: 62),
+            weatherIconImageView.widthAnchor.constraint(equalToConstant: 62),
+            weatherIconImageView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -10),
             
-            weatherLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
-            weatherLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            weatherLabel.trailingAnchor.constraint(equalTo: sunImageView.leadingAnchor, constant: 10),
+            weatherStatusLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
+            weatherStatusLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            weatherStatusLabel.trailingAnchor.constraint(equalTo: weatherIconImageView.leadingAnchor, constant: 10),
             
-            descriptionLabel.topAnchor.constraint(equalTo: weatherLabel.bottomAnchor, constant: 5),
-            descriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-            descriptionLabel.trailingAnchor.constraint(equalTo: sunImageView.leadingAnchor, constant: -10)
+            weatherDescriptionLabel.topAnchor.constraint(equalTo: weatherStatusLabel.bottomAnchor, constant: 5),
+            weatherDescriptionLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
+            weatherDescriptionLabel.trailingAnchor.constraint(equalTo: weatherIconImageView.leadingAnchor, constant: -10)
         ])
     }
 }

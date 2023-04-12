@@ -21,19 +21,21 @@ class MainViewController: UIViewController {
     private let userNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Your name"
-        label.textColor = .black
         label.adjustsFontSizeToFitWidth = true
         label.minimumScaleFactor = 0.5
+        label.font = .robotoMedium24()
+        label.textColor = .specialGray
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
     
     private let addWorkoutButton: UIButton = {
         let button = UIButton(type: .system)
-        button.backgroundColor = #colorLiteral(red: 0.9921568627, green: 0.8392156863, blue: 0.3568627451, alpha: 1)
+        button.backgroundColor = .specialYellow
         button.layer.cornerRadius = 10
         button.setTitle("Add workout", for: .normal)
-        button.tintColor = #colorLiteral(red: 0.1411764706, green: 0.2941176471, blue: 0.262745098, alpha: 1)
+        button.tintColor = .specialDarkGreen
+        button.titleLabel?.font = .robotoMedium12()
         button.imageEdgeInsets = .init(top: 0,
                                        left: 20,
                                        bottom: 15,
@@ -42,8 +44,8 @@ class MainViewController: UIViewController {
                                        left: -40,
                                        bottom: 0,
                                        right: 0)
-        button.titleLabel?.font = .systemFont(ofSize: 12)
         button.setImage(UIImage(named: "plus"), for: .normal)
+        button.addShadowOnView()
         button.addTarget(self, action: #selector(addWorkoutButtonTapped), for: .touchUpInside)
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -65,7 +67,7 @@ class MainViewController: UIViewController {
     }
     
     private func setupViews() {
-        view.backgroundColor = #colorLiteral(red: 0.9411764706, green: 0.9294117647, blue: 0.8862745098, alpha: 1)
+        view.backgroundColor = .specialBackground
         
         view.addSubview(calendarView)
         view.addSubview(userPhotoImageView)
