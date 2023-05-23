@@ -29,6 +29,11 @@ class NameView: UIView {
         addSubview(nameLabel)
         addSubview(nameTextField)
     }
+    
+    public func getNameTextFieldText() -> String {
+        guard let text = nameTextField.text else { return "" }
+        return text
+    }
 }
 
 extension NameView {

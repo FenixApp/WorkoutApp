@@ -73,6 +73,10 @@ class DateAndRepeatView: UIView {
                                       spacing: 10)
         backgroundView.addSubview(repeatStackView)
     }
+    
+    public func getDateAndRepeat() -> (date: Date, isRepeat: Bool) {
+        (datePicker.date, repeatSwitch.isOn)
+    }
 }
 
 extension DateAndRepeatView {

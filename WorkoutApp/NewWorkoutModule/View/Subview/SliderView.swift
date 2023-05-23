@@ -7,7 +7,13 @@
 
 import UIKit
 
+protocol SliderViewProtocol: AnyObject {
+    func changeValue(type: SliderType, value: Int)
+}
+
 class SliderView: UIView {
+    
+    weak var delegate: SliderViewProtocol?
     
     private let nameLabel = UILabel(text: "Name",
                                     font: .robotoMedium18(),
@@ -21,15 +27,34 @@ class SliderView: UIView {
     
     private var stackView = UIStackView()
     
+    private var sliderType: SliderType?
+    
+    public var isActive: Bool = true {
+        didSet {
+            if self.isActive {
+                nameLabel.alpha = 1
+                numberLabel.alpha = 1
+                slider.alpha = 1
+            } else {
+                nameLabel.alpha = 0.5
+                numberLabel.alpha = 0.5
+                slider.alpha = 0.5
+                slider.value = 0
+                numberLabel.text = "0"
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
     }
     
-    convenience init(name: String, minValue: Float, maxValue: Float) {
+    convenience init(name: String, minValue: Float, maxValue: Float, type: SliderType) {
         self.init(frame: .zero)
         nameLabel.text = name
         slider.minimumValue = minValue
         slider.maximumValue = maxValue
+        sliderType = type
         
         setupViews()
         setConstraints()
@@ -42,6 +67,8 @@ class SliderView: UIView {
     private func setupViews() {
         translatesAutoresizingMaskIntoConstraints = false
         
+        slider.addTarget(self, action: #selector(sliderChanged), for: .valueChanged)
+        
         let labelsStackView = UIStackView(arrangedSubviews: [nameLabel, numberLabel],
                                           axis: .horizontal,
                                           spacing: 10)
@@ -50,6 +77,13 @@ class SliderView: UIView {
                                 axis: .vertical,
                                 spacing: 10)
         addSubview(stackView)
+    }
+    
+    @objc private func sliderChanged() {
+        let intValueSlider = Int(slider.value)
+        numberLabel.text = sliderType == .timer ? intValueSlider.getTimeFromSeconds() : "\(intValueSlider)"
+        guard let type = sliderType else { return }
+        delegate?.changeValue(type: type, value: intValueSlider)
     }
 }
 
