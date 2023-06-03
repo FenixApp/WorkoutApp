@@ -62,7 +62,15 @@ class RepsOrTimerView: UIView {
         repsView.delegate = self
         timerView.delegate = self
     }
+    
+    public func resetSliderViewValues() {
+        setsView.resetValues()
+        repsView.resetValues()
+        timerView.resetValues()
+    }
 }
+
+//MARK: - SliderViewProtocol
 
 extension RepsOrTimerView: SliderViewProtocol {
     func changeValue(type: SliderType, value: Int) {
@@ -82,6 +90,8 @@ extension RepsOrTimerView: SliderViewProtocol {
         }
     }
 }
+
+//MARK: - Set Constraints
 
 extension RepsOrTimerView {
     

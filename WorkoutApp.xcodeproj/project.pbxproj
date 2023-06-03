@@ -14,6 +14,7 @@
 		C4122BD52A1D20C200B599D0 /* WorkoutModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122BD42A1D20C200B599D0 /* WorkoutModel.swift */; };
 		C4122BD72A1D309C00B599D0 /* Date + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122BD62A1D309C00B599D0 /* Date + Extension.swift */; };
 		C4122BDA2A1D349000B599D0 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122BD92A1D349000B599D0 /* RealmManager.swift */; };
+		C4122BDC2A29122C00B599D0 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122BDB2A29122C00B599D0 /* UIViewController + Extension.swift */; };
 		C44907A92A12AD3F00489A80 /* SliderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44907A82A12AD3F00489A80 /* SliderView.swift */; };
 		C49AD85E29EA9AE400EE3007 /* MainTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49AD85D29EA9AE400EE3007 /* MainTableView.swift */; };
 		C49AD86029EAB40700EE3007 /* UIStackView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49AD85F29EAB40700EE3007 /* UIStackView + Extension.swift */; };
@@ -53,6 +54,7 @@
 		C4122BD42A1D20C200B599D0 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
 		C4122BD62A1D309C00B599D0 /* Date + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date + Extension.swift"; sourceTree = "<group>"; };
 		C4122BD92A1D349000B599D0 /* RealmManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		C4122BDB2A29122C00B599D0 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		C44907A82A12AD3F00489A80 /* SliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderView.swift; sourceTree = "<group>"; };
 		C49AD85D29EA9AE400EE3007 /* MainTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableView.swift; sourceTree = "<group>"; };
 		C49AD85F29EAB40700EE3007 /* UIStackView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView + Extension.swift"; sourceTree = "<group>"; };
@@ -324,6 +326,7 @@
 				C4C0BD3529CB692E00D4829A /* UIView + Extension.swift */,
 				C4C0B78929EA924600EBF94E /* UILabel + Extension.swift */,
 				C49AD85F29EAB40700EE3007 /* UIStackView + Extension.swift */,
+				C4122BDB2A29122C00B599D0 /* UIViewController + Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -438,6 +441,7 @@
 				C4C0BD3F29CB6EDE00D4829A /* UIFont + Extension.swift in Sources */,
 				C4C0BD3629CB692E00D4829A /* UIView + Extension.swift in Sources */,
 				C4C0BD2C29C2116C00D4829A /* CalendarView.swift in Sources */,
+				C4122BDC2A29122C00B599D0 /* UIViewController + Extension.swift in Sources */,
 				C49AD86C29ED074300EE3007 /* StatisticTableViewCell.swift in Sources */,
 				C44907A92A12AD3F00489A80 /* SliderView.swift in Sources */,
 				C49AD8762A10A15A00EE3007 /* NameView.swift in Sources */,

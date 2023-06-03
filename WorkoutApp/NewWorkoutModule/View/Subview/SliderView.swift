@@ -85,7 +85,15 @@ class SliderView: UIView {
         guard let type = sliderType else { return }
         delegate?.changeValue(type: type, value: intValueSlider)
     }
+    
+    public func resetValues() {
+        numberLabel.text = "0"
+        slider.value = 0
+        isActive = true
+    }
 }
+
+//MARK: - Set Constraints
 
 extension SliderView {
     
