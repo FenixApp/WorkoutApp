@@ -21,7 +21,7 @@ class StatisticTableViewCell: UITableViewCell {
     private let beforeLabel = UILabel(text: "Before: 18")
     private let nowLabel = UILabel(text: "Now: 20")
     
-    private let numberLabel: UILabel = {
+    private let differenceLabel: UILabel = {
        let label = UILabel()
         label.text = "+2"
         label.textColor = .specialGreen
@@ -61,8 +61,24 @@ class StatisticTableViewCell: UITableViewCell {
             axis: .horizontal,
             spacing: 10)
         addSubview(labelsStackView)
-        addSubview(numberLabel)
+        addSubview(differenceLabel)
         addSubview(separatorView)
+    }
+    
+    public func configure(differenceWorkout: DifferenceWorkout) {
+        nameLabel.text = differenceWorkout.name
+        beforeLabel.text = "Before: \(differenceWorkout.firstReps)"
+        nowLabel.text = "Now: \(differenceWorkout.lastReps)"
+        
+        let difference = differenceWorkout.lastReps - differenceWorkout.firstReps
+        differenceLabel.text = "\(difference)"
+        
+        switch difference {
+        case ..<0: differenceLabel.textColor = .specialGreen
+        case 1...: differenceLabel.textColor = .specialYellow
+        default:
+            differenceLabel.textColor = .specialGray
+        }
     }
 }
 
@@ -70,13 +86,13 @@ extension StatisticTableViewCell {
     
     private func setConstraints() {
         NSLayoutConstraint.activate([
-            numberLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
-            numberLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
-            numberLabel.widthAnchor.constraint(equalToConstant: 50),
+            differenceLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            differenceLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20),
+            differenceLabel.widthAnchor.constraint(equalToConstant: 50),
             
             nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 5),
             nameLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
-            nameLabel.trailingAnchor.constraint(equalTo: numberLabel.leadingAnchor, constant: -20),
+            nameLabel.trailingAnchor.constraint(equalTo: differenceLabel.leadingAnchor, constant: -20),
             
             labelsStackView.topAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
             labelsStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20),
