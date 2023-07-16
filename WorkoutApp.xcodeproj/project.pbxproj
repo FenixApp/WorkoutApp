@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C40D5F432A62D88E002566DA /* RepsWorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D5F422A62D88E002566DA /* RepsWorkoutViewController.swift */; };
+		C40D5F452A62E835002566DA /* WorkoutParametersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D5F442A62E835002566DA /* WorkoutParametersView.swift */; };
+		C40D5F472A6305B8002566DA /* CustomAlert.swift in Sources */ = {isa = PBXBuildFile; fileRef = C40D5F462A6305B8002566DA /* CustomAlert.swift */; };
 		C4122BCA2A1BC5E200B599D0 /* Int + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122BC92A1BC5E200B599D0 /* Int + Extension.swift */; };
 		C4122BCD2A1BC7AB00B599D0 /* SliderTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4122BCC2A1BC7AB00B599D0 /* SliderTypes.swift */; };
 		C4122BD02A1D1F3A00B599D0 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = C4122BCF2A1D1F3A00B599D0 /* Realm */; };
@@ -50,6 +53,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C40D5F422A62D88E002566DA /* RepsWorkoutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepsWorkoutViewController.swift; sourceTree = "<group>"; };
+		C40D5F442A62E835002566DA /* WorkoutParametersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutParametersView.swift; sourceTree = "<group>"; };
+		C40D5F462A6305B8002566DA /* CustomAlert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomAlert.swift; sourceTree = "<group>"; };
 		C4122BC92A1BC5E200B599D0 /* Int + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int + Extension.swift"; sourceTree = "<group>"; };
 		C4122BCC2A1BC7AB00B599D0 /* SliderTypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SliderTypes.swift; sourceTree = "<group>"; };
 		C4122BD42A1D20C200B599D0 /* WorkoutModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutModel.swift; sourceTree = "<group>"; };
@@ -105,6 +111,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C40D5F3D2A62D7EC002566DA /* RepsWorkoutModule */ = {
+			isa = PBXGroup;
+			children = (
+				C40D5F3E2A62D81C002566DA /* View */,
+				C40D5F3F2A62D829002566DA /* Controller */,
+			);
+			path = RepsWorkoutModule;
+			sourceTree = "<group>";
+		};
+		C40D5F3E2A62D81C002566DA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C40D5F442A62E835002566DA /* WorkoutParametersView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		C40D5F3F2A62D829002566DA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				C40D5F422A62D88E002566DA /* RepsWorkoutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		C4122BCB2A1BC79400B599D0 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -224,6 +255,7 @@
 				C49AD87E2A11681A00EE3007 /* GreenButton.swift */,
 				C49AD8802A1169BC00EE3007 /* BrownTextField.swift */,
 				C49AD8822A116AB000EE3007 /* GreenSlider.swift */,
+				C40D5F462A6305B8002566DA /* CustomAlert.swift */,
 			);
 			path = Unique;
 			sourceTree = "<group>";
@@ -260,6 +292,7 @@
 				C49AD86D2A00BD7300EE3007 /* NavigationModule */,
 				C4C0BD2529C0E06100D4829A /* MainModule */,
 				C49AD8702A00C2F200EE3007 /* NewWorkoutModule */,
+				C40D5F3D2A62D7EC002566DA /* RepsWorkoutModule */,
 				C49AD86329EC5DED00EE3007 /* StatisticModule */,
 				C4122BD82A1D346700B599D0 /* Service */,
 				C4C0BD2F29CB688A00D4829A /* Extension */,
@@ -433,10 +466,13 @@
 				C49AD8782A10AC4800EE3007 /* DateAndRepeatView.swift in Sources */,
 				C4122BD52A1D20C200B599D0 /* WorkoutModel.swift in Sources */,
 				C49AD87F2A11681A00EE3007 /* GreenButton.swift in Sources */,
+				C40D5F432A62D88E002566DA /* RepsWorkoutViewController.swift in Sources */,
 				C4C0BD2E29C2358B00D4829A /* WeatherView.swift in Sources */,
 				C4C0BD1529C0D94100D4829A /* MainViewController.swift in Sources */,
+				C40D5F472A6305B8002566DA /* CustomAlert.swift in Sources */,
 				C49AD87A2A10AD9300EE3007 /* RepsOrTimerView.swift in Sources */,
 				C49AD86F2A00BDA200EE3007 /* MainTabBarController.swift in Sources */,
+				C40D5F452A62E835002566DA /* WorkoutParametersView.swift in Sources */,
 				C49AD86029EAB40700EE3007 /* UIStackView + Extension.swift in Sources */,
 				C49AD86729EC5E8100EE3007 /* StatisticViewController.swift in Sources */,
 				C49AD8742A00C35B00EE3007 /* NewWorkoutViewController.swift in Sources */,
